@@ -10,8 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "postinstall": "prisma generate",
-    "export": "prisma generate && cross-env NODE_OPTIONS='--max-old-space-size=4096' next build"
+    "postinstall": "prisma generate --schema=./prisma/schema.prisma",
+    "export": "prisma generate --schema=./prisma/schema.prisma && cross-env NODE_OPTIONS='--max-old-space-size=4096' next build"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.8.0",
