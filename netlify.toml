@@ -3,6 +3,11 @@
   publish = "out"
   functions = "netlify/functions"
 
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
+  NEXT_PUBLIC_API_URL = "/.netlify/functions"
+
 [dev]
   functions = "netlify/functions"
   publish = "out"
@@ -14,6 +19,4 @@
 
 [functions]
   node_bundler = "esbuild"
-
-[build.environment]
-  NEXT_PUBLIC_API_URL = "/.netlify/functions"
+  included_files = ["prisma/**/*"]
