@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+  functions = "netlify/functions"
+
+[dev]
+  functions = "netlify/functions"
+  publish = "out"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NEXT_PUBLIC_API_URL = "/.netlify/functions"
